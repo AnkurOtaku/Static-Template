@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Home</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        /***********************************************/
+        /**                  M A I N                  **/
+        /***********************************************/
+
+        .main {
+            display: grid;
+            gap: 2em;
+        }
+        .part-2 , .part-5{
+            background-color: black;
+            color: #fff;
+        }
+        .main div {
+            max-width: 100vw;
+        }
+
+
+        /***********************************************/
+        /**                W E L C O M E              **/
+        /***********************************************/
+
+        .welcome {
+            height: 60vh;
+            color: #fff;
+            line-height: normal;
+            clip-path: circle(50%);
+            background: url(station.jpg) center/cover no-repeat;
+        }
+            .sub-welcome {
+                height: 100%;
+                display: grid;
+                place-content: center;
+                place-items: center;
+                background-color: #00000044;
+            }
+            .welcome p  { font-size: 1.5rem; }
+            .welcome h1 { font-size: 2.5rem; }
+            .design::before, .design::after {
+                content: '';
+                width: 3vw;
+                height: 2px;
+                background-color: #fff;
+            }
+            .welcome-buttons a, .welcome-buttons button, .part-1-info a {
+                border-radius: 30px;
+                padding: 5px 20px;
+                font-size: 1.2rem;
+                color: #fff;
+                background-color: var(--orange);
+            }
+            .welcome-buttons button {
+                margin-left: 5px;
+                border: none;
+                color: black;
+                background-color: #fff;
+            }
+        @media only screen and (max-width: 600px) {
+            .welcome p  { font-size: 1rem; }
+            .welcome h1 { font-size: 1.5rem; }
+            .welcome-buttons a, .welcome-buttons button, .part-1-info a {
+                font-size: 1rem;
+                padding: 2px 10px;
+            }
+        }
+        
+
+        /***********************************************/
+        /**                P A R T -  1               **/
+        /***********************************************/
+
+        .part-1 {
+            display: flex;
+            flex-direction: row;
+            column-gap: 1em;
+            row-gap: 1em;
+        }
+            .part-1-info {
+                padding: 5px;
+                text-align: left;
+                width: 55vw;
+            }
+                .part-1-info h4 {
+                    color: var(--orange);
+                    margin-bottom: 10px;
+                }
+                .part-1-info h3 {
+                    font-size: 1.8rem;
+                    margin-bottom: 10px;
+                }
+            .part-1-pic {
+                background: url(station.jpg) center/cover no-repeat;
+                width: 44vw;
+            }
+        @media only screen and (max-width: 767px) {
+            .part-1 { flex-direction: column; }
+            .part-1-info { width: 100%; }
+        }
+
+
+
+        /***********************************************/
+        /**                P A R T -  2               **/
+        /***********************************************/
+
+        .part-1, .part-2, .part-3 {
+            box-sizing: border-box;
+            padding: 5% 15%;
+        }
+            .part-2-heading,
+            .part-3-heading,
+            .part-4-heading {
+                text-align: center;
+                font-size: 2rem;
+                text-transform: uppercase;
+                font-weight: 100;
+                margin-bottom: 10px;
+            }
+                
+                /* underline */
+                .part-2-heading::after,
+                .part-3-heading::after,
+                .part-4-heading::after {
+                    content: '';
+                    width: 5%;
+                    background-color: var(--orange);
+                    margin: 10px auto 0;
+                    display: block;
+                    height: 2px;
+                }
+            .part-2-info, .part-3-info {
+                text-align: center;
+                width: 50vw;
+                margin: 0 auto 10px;
+            }
+            .features {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 1em;
+                justify-content: center;
+                place-items: center;
+            }
+            .col {
+                box-sizing: border-box;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                padding: 5px;
+                height: 100%;
+                text-align: center;
+                transition: all 0.5s;
+            }
+                .col:hover {
+                    background-color: var(--orange);
+                }
+                .col:hover a{ color: black;}
+                .col img {
+                    width: 6vw;
+                    height: 6vw;
+                }
+                .col a {
+                    color: #fff;
+                    text-decoration: underline;
+                    font-size: small;
+                }
+                @media only screen and (max-width: 767px) {
+                    .part-2-info, .part-3-info {
+                        width: 70vw;
+                    }
+                    .col {
+                        width: 100%;
+                    }
+                    .col p {
+                        display: none;
+                    }
+                }
+        
+
+
+        /***********************************************/
+        /**                P A R T -  3               **/
+        /***********************************************/
+
+        .part-3 .col {
+            border: 3px solid rgb(184, 88, 11);
+            transition: none;
+            background-color: rgb(250, 250, 250);
+        }
+            .part-3 .col:hover { background-color: rgb(250, 250, 250); }
+            .part-3 .col h3 { color: var(--orange); }
+
+
+
+        /***********************************************/
+        /**                P A R T -  4               **/
+        /***********************************************/
+
+        .part-4 {
+            display: flex;
+            background-color: rgb(231, 231, 231);
+            padding: 5% 2%;
+        }
+            .contact-us {
+                padding: 5%;
+                background-image:
+                    linear-gradient(
+                        rgba(245, 117, 12, 0.7),
+                        rgba(245, 117, 12, 0.7)),
+                    url(station.jpg);
+                background-size: cover;
+                width: 50%;
+                color: #fff;
+            }
+                .contact-us .part-4-heading::after {
+                    margin: 15px 0;
+                    background-color: #fff;
+                    width: 10%;
+                }
+            .get-in-touch {
+                background-color: #fff;
+                z-index: 2;
+                width: 60%;
+                padding: 5%;
+                transform: translateY(40px);
+            }
+                .part-4-heading {
+                    text-align: left;
+                }
+                    .get-in-touch p::after { width: 0; }
+                .reach-us {
+                    display: grid;
+                    grid-template-columns: repeat(2,1fr);
+                    gap: 0.5em; 
+                }
+                    .reach-us label {
+                        display:block;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                    .reach-us input {
+                        padding: 2% 0;
+                        border: none;
+                        border-bottom: 1px solid grey;
+                        width: 90%;
+                    }
+                        .reach-us input:focus {
+                            outline: none;
+                        }
+                    .reach-us .message {
+                        position: relative;
+                        width: 180%;
+                    }
+                    .reach-us button {
+                        position: absolute;
+                        width: calc(2vw + 30px);
+                        height: calc(2vw + 30px);
+                        border-radius: 50%;
+                        font-size: 2rem;
+                        color: #fff;
+                        transform: translateY(-10px);
+                        background-color: var(--orange);
+                        border: none;
+                    }
+        @media only screen and (max-width: 767px) {
+            .part-4 {
+                flex-direction: column;
+                padding: 0;
+            }
+            .contact-us, .get-in-touch {
+                width: 100%;
+                box-sizing:border-box;
+                transform: none;
+            }
+        }
+
+
+
+        /***********************************************/
+        /**                P A R T -  5               **/
+        /***********************************************/
+
+        .part-5 {
+            padding: 5% 0;
+        }
+            .part-5-heading, .part-5 p {
+                text-align: center;
+            }
+            .part-5 p{ color: grey; }
+            .search-bar {
+                margin: 10px auto;
+                display: flex;
+                width: 60%;
+                padding: 2px 5px 2px 15px;
+                border-radius: 30px;
+                background-color: #fff;
+            }
+                .search-bar input {
+                    outline: none;
+                    border: none;
+                    width: 97%;
+                    font-size: 1rem;
+                }
+                .search-bar button {
+                    width: calc(1vw + 20px);
+                    height: calc(1vw + 20px);
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                    color: #fff;
+                    transform: rotate(-20deg);
+                    background-color: var(--orange);
+                    border: none;
+                }
+        
+        .part-5 hr {
+            opacity: .4;
+            margin: 2em auto;
+            width: 80%;
+        }
+        
+        .links {
+            margin: 1.5em;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            column-gap: 0.5em;
+            row-gap: 0.5em;
+        }
+        @media only screen and (max-width: 767px) {
+            .links {
+                grid-template-columns: repeat(2,1fr);
+                justify-items: center;
+            }
+        }
+            .links ul {
+                list-style: none;
+            }
+            .links ul li:nth-child(1) {
+                color: #fff;
+                font-size: 1.2rem;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+                .links ul li:nth-child(1)::after {
+                    content: '';
+                    margin: 10px 0;
+                    display: block;
+                    height: 2px;
+                    background-color: var(--orange);
+                    width: 25%;
+                }
+                .links ul li a {
+                    color: grey;
+                    text-transform: capitalize;
+                }
+                .links li:hover a {
+                    color: #fff;
+                }
+
+
+
+        /***********************************************/
+        /**                F O O T E R                **/
+        /***********************************************/
+
+        footer {
+            font-size: 0.8rem;
+            color: grey;
+            text-align: center;
+            background-color: #fff;
+        }
+            .icons { margin-left: auto; }
+            .icons a {
+                margin-right: 20px;
+                font-weight: 800;
+                text-transform: none;
+            }
+
+            #facebook { color: blue; }
+            #twitter { color: skyblue; }
+            #google-plus { color: red; }
+            #linked-in { color: navy; }
+        
+            .top {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: .50%;
+            bottom: 3vh;
+            right: 2vw;
+            z-index: 999;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            color: black;
+            font-size: 2.5rem;
+            transform: rotate(-90deg);
+            background-color: rgb(200, 200, 200, 0.5);
+        }
+            .top:hover { background-color: #fff;    }
+            .top span  { transform: translateY(-2px); }
+    </style>
+</head>
+
+
+<body>
+    <div class="head">
+        <div class="outer-links">
+            <div class="logo">
+                <img src="earth.png">
+                <p>company logo</p>
+            </div>
+            <ul class="nav">
+                <li id="nav-active"><a href="index.html">Home</a></li>
+                <li><a href="Project-Game.html">Game</a></li>
+                <li><a href="Project-Travel.html">Travel</a></li>
+                <li><a href="Project-About.html">About</a></li>
+                <li><a href="Project-Contact.html">Contact</a></li>
+            </ul>
+            <button type="button" id="open-menu">Menu &#9776;</button>
+            <div class="menu-box">
+                <button type="button" id="close-menu">&#10008;</button>
+                <ul class="menu-nav">
+                    <li id="nav-active"><a href="index.html">Home</a></li>
+                    <li><a href="Project-Game.html">Game</a></li>
+                    <li><a href="Project-Travel.html">Travel</a></li>
+                    <li><a href="Project-About.html">About</a></li>
+                    <li><a href="Project-Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="body-links">
+            <li><a href="#part-1">About Us</a></li>
+            <li><a href="#part-2">Provide</a></li>
+            <li><a href="#part-3">Technologies</a></li>
+            <li><a href="#part-4">Contact Us</a></li>
+            <li><a href="#part-5">Other Links</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="top">
+        <div class="welcome">
+            <div class="sub-welcome">
+                <p>ANY LOCATION. ANY APPLICATION</p>
+                <h1>CONNECTING THE</h1>
+                <h1 class="design">WORLD</h1>
+                <div class="welcome-buttons">
+                    <a href="#part-1">Get Started</a>
+                    <button type="button">Learn More</button>
+                </div>
+            </div>
+        </div>
+        
+        <a id="part-1"></a>
+        <div class="part-1">
+            <div class="part-1-info">
+                <h4>About Us</h4>
+                <h3>redifining enterprises communications</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur nulla ad quos impedit! Quibusdam sint fugiat dolore nihil vel atque eum iste et doloremque nemo? Enim, minus. Dolores, itaque iste?
+                    Optio neque veritatis fugit iure, ipsa quam atque. Eveniet, labore! Nam explicabo, quidem iusto unde dolorum fuga. Consequatur, deserunt, beatae inventore quisquam harum minima eos dolorum, debitis maiores expedita quidem?
+                </p>
+                <br>
+                <a href="">MORE ABOUT US</a>
+            </div>
+            <div class="part-1-pic">
+            </div>
+        </div>
+
+        <a id="part-2"></a>
+        <div class="part-2">
+            <p class="part-2-heading">what <b>we provide</b></p>
+            <p class="part-2-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus nisi ea aliquam consectetur facere temporibus cupiditate quasi aperiam explicabo natus!
+            </p>
+            <div class="features">
+                <div class="col">
+                    <img src="earth.png">
+                    <h5>Managed Services</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur quibusdam molestiae cum, nostrum assumenda maiores natus, quasi reiciendis similique tempore.
+                    </p><br>
+                    <a href="">LEARN MORE</a>
+                </div>
+                <div class="col">
+                    <img src="earth.png">
+                    <h5>voice and data</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur quibusdam molestiae cum, nostrum assumenda maiores natus, quasi reiciendis similique tempore.
+                    </p><br>
+                    <a href="">LEARN MORE</a>
+                </div>
+                <div class="col">
+                    <img src="earth.png">
+                    <h5>colocated hosting</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur quibusdam molestiae cum, nostrum assumenda maiores natus, quasi reiciendis similique tempore.
+                    </p><br>
+                    <a href="">LEARN MORE</a>
+                </div>
+                <div class="col">
+                    <img src="earth.png">
+                    <h5>Cloud</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur quibusdam molestiae cum, nostrum assumenda maiores natus, quasi reiciendis similique tempore.
+                    </p><br>
+                    <a href="">LEARN MORE</a>
+                </div>
+                <div class="col">
+                    <img src="earth.png">
+                    <h5>cable and wiring</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur quibusdam molestiae cum, nostrum assumenda maiores natus, quasi reiciendis similique tempore.
+                    </p><br>
+                    <a href="">LEARN MORE</a>
+                </div>
+                <div class="col">
+                    <img src="earth.png">
+                    <h5>SATELLITE</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur quibusdam molestiae cum, nostrum assumenda maiores natus, quasi reiciendis similique tempore.
+                    </p><br>
+                    <a href="">LEARN MORE</a>
+                </div>
+            </div>
+        </div>
+
+        <a id="part-3"></a>
+        <div class="part-3">
+            <p class="part-3-heading">why core <b>technologies?</b></p>
+            <p class="part-3-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus duciosam nisi ea facere temporibus cupiditate quasi aperiam explicabo natus!
+            </p>
+            <div class="features">
+                <div class="col">
+                    <h3>24 / 7 / 365</h3>
+                    <h5>Support</h5>
+                    <p>
+                        Our workers are always om the job for you
+                    </p>
+                </div>
+                <div class="col">
+                    <h3>20 years</h3>
+                    <h5>expertise</h5>
+                    <p>
+                        How long we've been servicing business
+                    </p>
+                </div>
+                <div class="col">
+                    <h3>upto 50%</h3>
+                    <h5>Savings</h5>
+                    <p>
+                        Typical savings when you switch to Hosted Voice
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <a id="part-4"></a>
+        <div class="part-4">
+            <div class="contact-us">
+                <p class="part-4-heading"><b>contact</b> us</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dicta suscipit ea, assumenda et cum blanditiis mollitia saepe a officia minima aliquid unde eligendi praesentium voluptatem quae rerum molestiae iste.
+                </p>
+            </div>
+            <div class="get-in-touch">
+                <p class="part-4-heading">get in <b>touch</b></p>
+                <form class="reach-us">
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" placeholder="Jonathan"/>
+                    </div>
+                    <div>
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Smith"/>
+                    </div>
+                    <div>
+                        <label>Email address</label>
+                        <input type="text" placeholder="jonathansmith@gmail.com"/>
+                    </div>
+                    <div>
+                        <label>phone</label>
+                        <input type="number" placeholder="123-456-7890"/>
+                    </div>
+                    <div class="message">
+                        <label>message</label>
+                        <input type="text" placeholder="Hi, do you have to talk about..."/>
+                        <button type="button">&#x2709;</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <a id="part-5"></a>
+        <div class="part-5">
+            <h3 class="part-5-heading">subscribe Newsletter</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, unde?
+            </p>
+            <div class="search-bar">
+                <input type="text" placeholder="&#x2709; Email Address"/>
+                <button type="button">&#x270E;</button>
+            </div>
+
+            <hr>
+
+            <div class="links">
+                <ul>
+                    <li>Quick Links</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">who we are</a></li>
+                    <li><a href="#">what we do</a></li>
+                    <li><a href="#">contracts</a></li>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+                <ul>
+                    <li>solution</li>
+                    <li><a href="#">core security</a></li>
+                    <li><a href="#">core conference</a></li>
+                    <li><a href="#">core voice</a></li>
+                    <li><a href="#">core cloud</a></li>
+                    <li><a href="#">core video</a></li>
+                    <li><a href="#">core recycling</a></li>
+                </ul>
+                <ul>
+                    <li>providers</li>
+                    <li><a href="#">hitachi</a></li>
+                    <li><a href="#">intermedia</a></li>
+                    <li><a href="#">mitel</a></li>
+                    <li><a href="#">momentum</a></li>
+                    <li><a href="#">net carrier</a></li>
+                </ul>
+                <ul>
+                    <li>contracts</li>
+                    <li><a href="#">EiS</a></li>
+                    <li><a href="#">SRE catalog</a></li>
+                    <li><a href="#">GSA GRISTS #</a></li>
+                    <li><a href="#">GSA 8(a) STARS #</a></li>
+                    <li><a href="#">login</a></li>
+                </ul>
+                <ul>
+                    <li>services</li>
+                    <li><a href="#">installation</a></li>
+                    <li><a href="#">wholesale carrier</a></li>
+                    <li><a href="#">voice & video</a></li>
+                    <li><a href="#">IT Assist</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&#169; Copyright 2020. Core Texhnologies Inc. All Rights reserved.</p>
+        <div class="icons">
+            <a href="#" id="facebook">f</a>
+            <a href="#" id="twitter">T</a>
+            <a href="#" id="google-plus">g+</a>
+            <a href="#" id="linked-in">in</a>
+        </div>
+    </footer>
+
+
+    <a href="#top" class="top"><span>&#x27A3;</span></a>
+
+
+
+    <!-- ************************************************
+    **              J A V A S C R I P T                **
+    **************************************************-->
+
+    <script>
+        const open_menu = document.getElementById('open-menu');
+        const close_menu= document.getElementById('close-menu');
+        
+        // time delay function
+        function sleep(time) {
+            return new Promise((resolve)=> setTimeout(resolve,time));
+        }
+
+        // opening and closing of menu box
+         open_menu.addEventListener('click', function(e) {
+            document.querySelector('.menu-box').style.display = 'grid';
+            document.querySelector('.menu-box').style.animation = 'open-menu 0.5s ease-in-out 1';
+            sleep(490).then(()=>{
+                document.querySelector('.menu-box').style.transform = 'translateX(0px)';
+            })
+        })
+        close_menu.addEventListener('click', function(e) {
+            document.querySelector('.menu-box').style.animation = 'close-menu 0.5s ease-in-out 1';
+            sleep(490).then(()=>{
+                document.querySelector('.menu-box').style.transform = 'translateX(0px)';
+                document.querySelector('.menu-box').style.display = 'none';
+            })
+        })
+    </script>
+</body>
+</html> 

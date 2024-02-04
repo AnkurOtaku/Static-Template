@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Travel</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        /***********************************************/
+        /**                  M A I N                  **/
+        /***********************************************/
+        :root {
+            --orange: rgb(245, 117, 12);
+        }
+        body {
+            background-image: linear-gradient(120deg,var(--orange) 10%, transparent 80%), url(station.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .main {
+            margin: 10vh 0 5vh 5vw;
+            width: 25vw;
+            min-width: 230px;
+        }
+            
+            .main hr {
+                height: 3px;
+                background-color: #fff;
+                margin: 5px 0;
+            }
+            .main p {
+                margin: 20px 0;
+            }
+            .carousel-buttons {
+                display: inline;
+                margin: 20px;
+            }
+                .carousel-buttons input {
+                    margin: 0 7px;
+                }
+            .carousel-buttons:checked {
+                background-color: orange;
+                /* color: orange; shape : circular; */
+            }
+            @media only screen and (max-width: 700px) {
+                .main {
+                    margin: 6vh auto 3vh auto;
+                    width: 25vw;
+                    width: 80vw;
+                }
+            }
+
+
+        /***********************************************/
+        /**                 S E A R C H               **/
+        /***********************************************/
+
+
+        .search {
+            margin: 20px 50px;
+            display: grid;
+            grid-template-rows: 50px auto;
+            max-width: 900px;
+        }
+            .trip-type {
+                margin: 2px 0;
+            }
+            .trip-type button {
+                    display: inline-block;
+                    height: 100%;
+                    width: 100px;
+                    color: #fff;
+                    font-weight: 700;
+                    font-family:'Lucida Sans';
+                    background-color: rgba(75, 75, 75, 0.521);
+                    border: none;
+                    border-top-right-radius: 15px;
+                }
+                    .trip-type button:focus {
+                        color: rgb(255, 136, 0);
+                        background-color: rgb(221, 221, 221);
+                        outline: none;
+                    }
+            .search form {
+                background-color: rgba(243, 54, 11, 0.678);
+                border-top-right-radius:   50px;
+                border-bottom-left-radius: 50px;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 0.5em;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 3%;
+            }
+                .from, .to, .date {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5em;
+                    flex: 1 1 150px;
+                }
+                label {
+                    font-size:  clamp(0.9rem, 1vw + 0.5rem, 1.2rem);
+                }
+                .search-button {
+                    padding: 1% 2%;
+                    flex: 1 0 100px;
+                    max-width: 85%;
+                    border: none;
+                    font-size: 1.2rem;
+                    border-top-right-radius:   20px;
+                    border-bottom-left-radius: 20px;
+                    background: rgb(248, 123, 5);
+                    font-weight: 700;
+                }
+                    select, form input {
+                        color: black;
+                        padding: 0 10px;
+                        background-color: transparent;
+                        border: 1px solid rgb(29, 29, 29);
+                        border-top-right-radius:   20px;
+                        border-bottom-left-radius: 20px;
+                        border-color: #fff;
+                        height: 5vh;
+                    }
+            
+            @media only screen and (max-width: 700px) {
+                .search {
+                    margin: 20px 30px;
+                    grid-template-rows: 35px auto;
+                }
+                .trip-type {
+                    display: grid;
+                    grid-template-columns: repeat(3,1fr);
+                    column-gap: 0.5em;
+                }
+                .trip-type button {
+                    border-top-left-radius: 20px;
+                    width: auto;
+                }
+                .search form {
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                }
+                .search-button {
+                    border-radius: 20px;
+                }
+            }
+
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="outer-links">
+            <div class="logo">
+                <img src="earth.png">
+                <p>company logo</p>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Project-Game.html">Game</a></li>
+                <li id="nav-active"><a href="Project-Travel.html">Travel</a></li>
+                <li><a href="Project-About.html">About</a></li>
+                <li><a href="Project-Contact.html">Contact</a></li>
+            </ul>
+            <button type="button" id="open-menu">Menu &#9776;</button>
+            <div class="menu-box">
+                <button type="button" id="close-menu">&#10008;</button>
+                <ul class="menu-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Project-Game.html">Game</a></li>
+                    <li id="nav-active"><a href="Project-Travel.html">Travel</a></li>
+                    <li><a href="Project-About.html">About</a></li>
+                    <li><a href="Project-Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content-1">
+            <h1>
+                1. Let's Make your Trip Best ever
+            </h1>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat pariatur ipsam delectus officia. Content-1
+            </p>
+        </div>
+        <div class="content-2">
+            <h1>
+                2. Let's Make your Trip Best ever
+            </h1>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat pariatur ipsam delectus officia. content-2
+            </p>
+        </div>
+        <div class="content-3">
+            <h1>
+                3. Let's Make your Trip Best ever
+            </h1>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat pariatur ipsam delectus officia. content-3
+            </p>
+        </div>
+        <div class="content-4">
+            <h1>
+                4. Let's Make your Trip Best ever
+            </h1>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat pariatur ipsam delectus officia. content-4
+            </p>
+        </div>
+        <div class="content-5">
+            <h1>
+                5. Let's Make your Trip Best ever
+            </h1>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat pariatur ipsam delectus officia. content-5
+            </p>
+        </div>
+        <div class="content-6">
+            <h1>
+                6. Let's Make your Trip Best ever
+            </h1>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem exercitationem aspern sd sdfd  sdf   asdhf ad
+            </p>
+        </div>
+        <div class="carousel-buttons">
+            <input type="radio" name="radio" id="btn-1" value="1" onclick="contentEdit(1)" checked/>
+            <input type="radio" name="radio" id="btn-2" value="2" onclick="contentEdit(2)"/>
+            <input type="radio" name="radio" id="btn-3" value="3" onclick="contentEdit(3)"/>
+            <input type="radio" name="radio" id="btn-4" value="4" onclick="contentEdit(4)"/>
+            <input type="radio" name="radio" id="btn-5" value="5" onclick="contentEdit(5)"/>
+            <input type="radio" name="radio" id="btn-6" value="6" onclick="contentEdit(6)"/>
+        </div>
+    </div>
+    <div class="search">
+        <div class="trip-type">
+            <button type="button" onclick="formEdit(1)" autofocus>One Way</button>
+            <button type="button" onclick="formEdit(2)">Round Trip</button>
+            <button type="button" onclick="formEdit(3)">Multicity</button>
+        </div>
+        <form class="form-1">
+            <div class="from">
+                <label>From</label>
+                <select>
+                    <option>Bangladesh</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Kolkata</option>
+                    <option>Pune</option>
+                    <option>Madhya PPradesh</option>
+                </select>
+            </div>
+            <div class="to">
+                <label>To</label>
+                <select>
+                    <option>United Kingdom</option>
+                    <option>Dubai</option>
+                    <option>Spain</option>
+                    <option>Japan</option>
+                    <option>Singapore</option>
+                    <option>New York</option>
+                </select>
+            </div>
+            <div class="date">
+                <label>Expected Date</label>
+                <input type="date">
+            </div>
+            <button type="button" class="search-button">Search</button>
+        </form>
+        <form class="form-2">
+            <div class="from">
+                <label>From</label>
+                <select>
+                    <option>Bangladesh</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Kolkata</option>
+                    <option>Pune</option>
+                    <option>Madhya PPradesh</option>
+                </select>
+            </div>
+            <div class="to">
+                <label>To</label>
+                <select>
+                    <option>United Kingdom</option>
+                    <option>Dubai</option>
+                    <option>Spain</option>
+                    <option>Japan</option>
+                    <option>Singapore</option>
+                    <option>New York</option>
+                </select>
+            </div>
+            <div class="date">
+                <label>Expected Date</label>
+                <input type="date">
+            </div>
+            <button type="button" class="search-button">Search</button>
+        </form>
+        <form class="form-3">
+            <div class="from">
+                <label>From</label>
+                <select>
+                    <option>Bangladesh</option>
+                    <option>Delhi</option>
+                    <option>Mumbai</option>
+                    <option>Kolkata</option>
+                    <option>Pune</option>
+                    <option>Madhya PPradesh</option>
+                </select>
+            </div>
+            <div class="date">
+                <label>Expected Date</label>
+                <input type="date">
+            </div>
+            <button type="button" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <script>
+        const main = document.querySelector('.main');
+        const form = document.querySelector('.search');
+        const open_menu = document.getElementById('open-menu');
+        const close_menu= document.getElementById('close-menu');
+        
+        // time delay function
+        function sleep(time) {
+            return new Promise((resolve)=> setTimeout(resolve,time));
+        }
+
+        // opening and closing of menu box
+         open_menu.addEventListener('click', function(e) {
+            document.querySelector('.menu-box').style.display = 'grid';
+            document.querySelector('.menu-box').style.animation = 'open-menu 0.5s ease-in-out 1';
+            sleep(490).then(()=>{
+                document.querySelector('.menu-box').style.transform = 'translateX(0px)';
+            })
+        })
+        close_menu.addEventListener('click', function(e) {
+            document.querySelector('.menu-box').style.animation = 'close-menu 0.5s ease-in-out 1';
+            sleep(490).then(()=>{
+                document.querySelector('.menu-box').style.transform = 'translateX(0px)';
+                document.querySelector('.menu-box').style.display = 'none';
+            })
+        })
+
+        for( let i=2; i<=6; i++) {
+            main.querySelector('.content-'+i).style.display = 'none';
+            if(i==2||i==3) {
+                form.querySelector('.form-'+i).style.display = 'none';
+            }
+        }
+
+        function contentEdit(num) {
+            for( let i=1; i<=6; i++) {
+                if(num!=i) {
+                    main.querySelector('.content-'+i).style.display = 'none';
+                } else {
+                    main.querySelector('.content-'+i).style.display = 'block';
+                    document.getElementById('btn-'+i).checked=true;
+                }
+            }
+        }
+
+        function formEdit(num) {
+            for( let i=1; i<=3; i++) {
+                if(num!=i) {
+                    form.querySelector('.form-'+i).style.display = 'none';
+                } else {
+                    form.querySelector('.form-'+i).style.display = 'flex';
+                }
+            }
+        }
+
+        setInterval(function() {
+            var value = parseInt(document.querySelector("input[type=radio][name=radio]:checked").value);
+            if(value==document.querySelector('.carousel-buttons').childElementCount)
+                { value = 0; }
+            contentEdit(value + 1);
+        },4000);
+    </script>
+</body>
+</html>

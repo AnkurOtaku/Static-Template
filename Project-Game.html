@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel | Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /***********************************************/
+        /**                  G A M E                  **/
+        /***********************************************/
+        :root {
+            --body-neutral: rgba(252, 252, 252, 0.233);
+            --body-red: rgba(185, 9, 9, 0.616);
+            --body-green: rgba(9, 143, 4, 0.441);
+            --btn-neutral: rgba(255, 255, 255, 0.596);
+            --orange: rgb(247, 160, 89);
+        }
+
+        body {
+            background-image: radial-gradient(black, var(--orange), white);
+        }
+        /* @keyframes correct-to-neautral {
+            0% {background-image: radial-gradient(black, var(--body-green), white)}
+            25% {background-image: radial-gradient(white, rgba(37, 37, 37, 0.747), var(--body-green))}
+            50% {background-image: radial-gradient(var(--orange), white, black)}
+            75% {background-image: radial-gradient(black, var(--orange), var(--orange),white)}
+            100% {background-image: radial-gradient(black, var(--orange), white)}
+        }
+        @keyframes wrong-to-neutral {
+            0% {background-image: radial-gradient(black, var(--body-red), white)}
+            25% {background-image: radial-gradient(white, rgba(37, 37, 37, 0.747), var(--body-red))}
+            50% {background-image: radial-gradient(var(--orange), white, black)}
+            75% {background-image: radial-gradient(black, var(--orange), var(--orange),white)}
+            100% {background-image: radial-gradient(black, var(--orange), white)}
+        }
+        @keyframes neutral-to-correct {
+            0% {background-image: radial-gradient(black, var(--orange), white)}
+            25% {background-image: radial-gradient(white, rgba(37, 37, 37, 0.747), var(--orange))}
+            50% {background-image: radial-gradient(var(--body-green), white, black)}
+            75% {background-image: radial-gradient(black, var(--body-green), var(--body-green),white)}
+            100% {background-image: radial-gradient(black, var(--body-green), white)}
+        } */
+        @keyframes neautral-to-wrong {
+            0% {background-image: radial-gradient(black, var(--orange), white)}
+            10% {background-image: radial-gradient(white, rgba(37, 37, 37, 0.747), var(--orange), white)}
+            25% {background-image: radial-gradient(white, rgba(37, 37, 37, 0.747), var(--orange))}
+            40% {background-image: radial-gradient(var(--body-red), white, white, rgba(37, 37, 37, 0.747))}
+            50% {background-image: radial-gradient(var(--body-red), white, rgba(37, 37, 37, 0.747))}
+            75% {background-image: radial-gradient(black, var(--body-red), var(--body-red),white)}
+            100% {background-image: radial-gradient(black, var(--body-red), white)}
+        }
+
+        .container {
+            margin: 20vh auto;
+            width: 60%;
+            max-width: 450px;
+            position: relative;
+            display: grid;
+            justify-items: center;
+            box-sizing: border-box;
+        }
+            
+            .container > * {
+              width: 100%;
+              height: 100%;
+              box-sizing: border-box;
+            }
+            .level {
+                font-size: 1.5rem;
+                text-align: center;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            .status {
+                text-align: center;
+                margin-bottom: 30px;
+                color: #fff;
+            }
+            .boxes, .buttons {
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                place-items: center;
+                gap: 1em;
+            }
+                .buttons { display: none; }
+                .boxes div, .buttons button {
+                    border-radius: 10px;
+                    width: 100%;
+                    padding-top: 100%;
+                    border: 1px solid black;
+                    background-color: var(--btn-neutral);
+                }
+                .buttons button:active {
+                    background: #fff;
+                }
+                @keyframes blink {
+                    0% { background: var(--btn-neural); }
+                    70% { background: #fff;}
+                    100% { background: var(--btn-neural); }
+                }
+            #try-again {
+                margin: 1vh auto;
+                padding: 2%;
+                border-radius: 10px;
+                width: fit-content;
+                font-size: 1.2rem;
+                color: black;
+                border: 2px solid black;
+                background-color: rgba(253, 249, 5, 0.6);
+            }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="outer-links">
+            <div class="logo">
+                <img src="earth.png">
+                <p>company logo</p>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li id="nav-active"><a href="Project-Game.html">Game</a></li>
+                <li><a href="Project-Travel.html">Travel</a></li>
+                <li><a href="Project-About.html">About</a></li>
+                <li><a href="Project-Contact.html">Contact</a></li>
+            </ul>
+            <button type="button" id="open-menu">Menu &#9776;</button>
+            <div class="menu-box">
+                <button type="button" id="close-menu">&#10008;</button>
+                <ul class="menu-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li id="nav-active"><a href="Project-Game.html">Game</a></li>
+                    <li><a href="Project-Travel.html">Travel</a></li>
+                    <li><a href="Project-About.html">About</a></li>
+                    <li><a href="Project-Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <p class="level">Level : 1</p>
+        <p class="status">Select Blinking Tiles In Order</p>
+        <div class="boxes">
+            <div id="box-1"></div>
+            <div id="box-2"></div>
+            <div id="box-3"></div>
+            <div id="box-4"></div>
+            <div id="box-5"></div>
+            <div id="box-6"></div>
+            <div id="box-7"></div>
+            <div id="box-8"></div>
+            <div id="box-9"></div>
+        </div>
+        <div class="buttons">
+            <button type="button" id="btn-1" onclick="passedValue(1)"></button>
+            <button type="button" id="btn-2" onclick="passedValue(2)"></button>
+            <button type="button" id="btn-3" onclick="passedValue(3)"></button>
+            <button type="button" id="btn-4" onclick="passedValue(4)"></button>
+            <button type="button" id="btn-5" onclick="passedValue(5)"></button>
+            <button type="button" id="btn-6" onclick="passedValue(6)"></button>
+            <button type="button" id="btn-7" onclick="passedValue(7)"></button>
+            <button type="button" id="btn-8" onclick="passedValue(8)"></button>
+            <button type="button" id="btn-9" onclick="passedValue(9)"></button>
+        </div>
+        <button type="button" id="try-again">Start</button>
+    </div>
+
+    <script>
+        // declaration and initializaton
+        let chain=[],pos=0,level=1;
+        const body      = document.querySelector('body');
+        const status    = document.querySelector ('.status');
+        const box       = document.querySelector ('.boxes');
+        const buttons   = document.querySelector ('.buttons');
+        const try_again = document.getElementById('try-again');
+        const open_menu = document.getElementById('open-menu');
+        const close_menu= document.getElementById('close-menu');
+
+        // changing box & buttons display as required
+        function switchDisplay(prior) {
+            if(prior=='box') {
+                box.style.display = 'grid';
+                buttons.style.display = 'none';
+            }
+            else if(prior=='buttons') {
+                box.style.display = 'none';
+                buttons.style.display = 'grid';
+            }
+            else { console.log('error in switch display function'); }
+        }
+
+        // random number generator between 1-9
+        function randomNum() {
+            // injected do-while to remove repeatition of same number
+            let num=0;
+            do{
+                num = Math.floor(Math.random()*9)+1;
+            } while(chain[chain.length-1]==num);
+            return num;
+            // remove this part in between
+            // return Math.floor(Math.random()*9)+1;
+        }
+
+        function reset(value) {
+            document.querySelector('#try-again').innerHTML = 'Try Again';
+            if(value=='reset') {
+                chain=[];
+                chain[0] = randomNum();
+                pos=0;
+                console.clear();
+                level=1;
+                status.innerHTML = 'Best Of Luck!';
+            }
+            else if(value=='passed') {
+                chain[pos+1] = randomNum();
+                pos=-1;
+                level++;
+            }
+            switchDisplay('box');
+            // body.style.animation = 'neutral-to-correct 1s linear';
+            body.style.backgroundImage = 'radial-gradient(black,var(--body-green),white)';
+            sleep(500).then(()=>{ preview(); })
+        }
+
+        // time delay function
+        function sleep(time) {
+            return new Promise((resolve)=> setTimeout(resolve,time));
+        }
+
+        // preview of next level
+        function preview() {
+            document.querySelector('.level').innerHTML = 'Level : ' + level;
+            let flag=0;
+            console.log(chain);
+
+            chain.forEach((num,i)=>{
+                flag=0;
+                for(let j=0;j<chain.length;j++) {
+                    if(num==chain[j] && i!=j && i>j) { 
+                        //runs whenever a value repeats in chain array
+                        if(chain[j]==chain[j+1]) {
+                            // runs when value repeated twice continously
+                            sleep(500*i).then(()=> {
+                                box.querySelector('#box-'+num).style.animation
+                                = `blink 0.5s linear`;
+                            })
+                        }
+                        else {
+                            sleep(500*i).then(()=> {
+                                box.querySelector('#box-'+num).style.animation
+                                = `blink 0.5s linear`;
+                            })
+                        }
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==0) {
+                    // runs when value appeared for the first time
+                    box.querySelector('#box-'+num).style.animation
+                    = `blink 0.5s linear calc(${i} *0.5s)`;
+                }
+                sleep(500*(i+1)).then(()=> { box.querySelector('#box-'+num).style.animation = ''; })
+            })
+            
+            sleep(500*(chain.length+1)).then(()=> {
+                // body.style.animation = 'correct-to-neutral 1s linear';
+                body.style.backgroundImage = 'radial-gradient(black,white)';
+                status.innerHTML = 'Best Of Luck!';
+                switchDisplay('buttons');
+            });
+        }
+
+        // onclick function to check answer
+        function passedValue(value) {
+            // console.log(value + ' pressed' + next);
+
+            // wrong input
+            if(chain[pos]!=value) {
+                // body.style.animation = 'neautral-to-wrong 0.7s linear';
+                body.style.backgroundImage = 'radial-gradient(black,var(--body-red),white)';
+                if(level>10) {
+                    status.innerHTML = 'Nooo, this wasn\'t the one. Though you were impressive. Let\'s Try Again';
+                }
+                else { status.innerHTML = 'Oops! Wrong tile. Let\'s Try again'; }
+                pos=-1;
+                switchDisplay('box');
+            }
+            // right input
+            else {
+                if( pos>=chain.length-1 ) { // correct till end
+                    if(level>10) {
+                        status.innerHTML = 'You doing Great! Let\'s level up more';
+                    }
+                    else { status.innerHTML = 'Level up time'; }
+                    reset('passed');
+                }
+            }
+            
+            pos+=1;
+        }
+
+        // opening and closing of menu box
+        open_menu.addEventListener('click', function(e) {
+            document.querySelector('.menu-box').style.display = 'grid';
+            document.querySelector('.menu-box').style.animation = 'open-menu 0.5s ease-in-out 1';
+            sleep(490).then(()=>{
+                document.querySelector('.menu-box').style.transform = 'translateX(0px)';
+            })
+        })
+        close_menu.addEventListener('click', function(e) {
+            document.querySelector('.menu-box').style.animation = 'close-menu 0.5s ease-in-out 1';
+            sleep(490).then(()=>{
+                document.querySelector('.menu-box').style.transform = 'translateX(0px)';
+                document.querySelector('.menu-box').style.display = 'none';
+            })
+        })
+
+        try_again.addEventListener('click', function(e) { reset('reset'); })
+
+        // write song, parcel, story for a month, website for her
+    </script>
+</body>
+</html>

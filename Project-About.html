@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel | About</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        /***********************************************/
+        /**                  T E A M                  **/
+        /***********************************************/
+        :root {
+            --orange: rgb(245, 117, 12);
+        }
+        .cover {
+            background-image: linear-gradient(45deg, var(--orange), transparent), url(station.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+            @media screen and (min-width:990px){
+                .cover {
+                    height: 100vh;
+                }
+            }
+
+        h1 {
+            padding: 5vh 0;
+            text-align: center;
+            font-family: cursive;
+            color: var(--orange);
+            font-size: clamp(1.5rem,2.5vw + 1rem,3rem);
+        }
+        .team {
+            margin: 10vh auto 0;
+            display: flex;
+            place-content: center;
+            gap: 1.3em;
+            width: 80vw;
+            flex-wrap: wrap;
+        }
+            .column {
+                padding: 5px;
+                min-width: 200px;
+                max-width: 300px;
+                flex: 1 1 250px;
+                display: grid;
+                place-items: center;
+                box-sizing: border-box;
+                background-color: #fff;
+                border-radius: 10px;
+                transition: all 1s ease-in-out;
+                animation: slide-bottom-to-top 1s ease-in 1;
+            }
+                .column img {
+                    width: clamp(45px, 2vw + 35px,70px);
+                    height: clamp(45px, 2vw + 35px,70px);
+                    border-radius: 50%;
+                    transform: translateY(-50%);
+                    border: 3px solid #fff;
+                    background-color: var(--orange);
+                }
+                .name {
+                    margin-top: clamp(-25px, -2vw - 35px,-50px);
+                    color: var(--orange);
+                    font-family: 'Cambria';
+                    font-weight: 800;
+                    font-size: clamp(1.2rem,2vw + 1rem,2rem);
+                    text-align: center;
+                }
+                .role {
+                    color: grey;
+                    text-align: center;
+                }
+                .info {
+                    padding: 5px;
+                    color: black;
+                    font-size: clamp(10px,1vw + 8px,16px);
+                }
+
+                @keyframes slide-bottom-to-top {
+                    0%{
+                        transform: translateY(100%);
+                        opacity: 0;
+                    }
+                    100%{
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div class="outer-links">
+            <div class="logo">
+                <img src="earth.png">
+                <p>company logo</p>
+            </div>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Project-Game.html">Game</a></li>
+                <li><a href="Project-Travel.html">Travel</a></li>
+                <li id="nav-active"><a href="Project-About.html">About</a></li>
+                <li><a href="Project-Contact.html">Contact</a></li>
+            </ul>
+            <button type="button" id="open-menu">Menu &#9776;</button>
+            <div class="menu-box">
+                <button type="button" id="close-menu">&#10008;</button>
+                <ul class="menu-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Project-Game.html">Game</a></li>
+                    <li><a href="Project-Travel.html">Travel</a></li>
+                    <li id="nav-active"><a href="Project-About.html">About</a></li>
+                    <li><a href="Project-Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cover">
+        <h1>Our Team</h1>
+        <div class="team">
+            <div class="column">
+                <img>
+                <h3 class="name">Unknown-1</h3>
+                <h5 class="role">UI Developer</h5>
+                <p class="info">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Quae placeat enim doloremque exercitationem velit quis,
+                    iste eum cumque quisquam amet temporibus dignissimos earum inventore.
+                    Placeat eligendi cumque beatae reiciendis ipsam?
+                </p>
+            </div>
+            <div class="column">
+                <img>
+                <h3 class="name">Unknown-2</h3>
+                <h5 class="role">Designer & Bug Tester</h5>
+                <p class="info">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Quae placeat enim doloremque exercitationem velit quis,
+                    iste eum cumque quisquam amet temporibus dignissimos earum inventore.
+                    Placeat eligendi cumque beatae reiciendis ipsam?
+                </p>
+            </div>
+             <div class="column">
+                <img>
+                <h3 class="name">Unknown-3</h3>
+                <h5 class="role">Have fun</h5>
+                <p class="info">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Quae placeat enim doloremque exercitationem velit quis,
+                    iste eum cumque quisquam amet temporibus dignissimos earum inventore.
+                    Placeat eligendi cumque beatae reiciendis ipsam?
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const open_menu = document.getElementById('open-menu');
+        const close_menu= document.getElementById('close-menu');
+        
+        // time delay function
+        function sleep(time) {
+            return new Promise((resolve)=> setTimeout(resolve,time));
+        }
+
+        // opening and closing of menu box
+        open_menu.addEventListener('click', function(e) {
+            document.querySelector('.menu-box').style.display = 'grid';
+            document.querySelector('.menu-box').style.animation = 'open-menu 0.5s ease-in-out 1';
+            sleep(490).then(()=>{
+                document.querySelector('.menu-box').style.transform = 'translateX(0px)';
+            })
+        })
+        close_menu.addEventListener('click', function(e) {
+            document.querySelector('.menu-box').style.animation = 'close-menu 0.5s ease-in-out 1';
+            sleep(490).then(()=>{
+                document.querySelector('.menu-box').style.transform = 'translateX(0px)';
+                document.querySelector('.menu-box').style.display = 'none';
+            })
+        })
+    </script>
+</body>
+</html>
